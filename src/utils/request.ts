@@ -20,13 +20,13 @@ function createService(options){
         	}
             const res = response.data
             if (!res.success) {
-                Message.error(res.msg || '请求错误！')
+                ElMessage.error(res.msg || '请求错误！')
                 return Promise.reject(new Error(res.msg || '请求错误！'))
             }
             return res.result
         },
         error=>{
-            Message.error( error.response.msg || error.response.status)
+            ElMessage.error( error.response.msg || error.response.status)
             return Promise.reject(error)
         }
     )
