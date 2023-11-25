@@ -1,0 +1,22 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.vitest.json"
+    }
+  ],
+  "compilerOptions": {
+    // ...
+    "types": ["element-plus/global", "vite-plugin-vue-layouts/client"]
+  },
+  "includes":[
+  	"src/**/*.d.ts",
+  	"./*.d.ts"
+  ]
+}
