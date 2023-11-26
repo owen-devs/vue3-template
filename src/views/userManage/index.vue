@@ -12,6 +12,7 @@
 </template>
 
 <script lang="ts" setup>
+
 const msg = ref("用户管理页面")
 const list = ref([{
 	label:"张三",

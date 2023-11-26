@@ -22,5 +22,6 @@
 	import appMain from "./components/appMain"
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "./styles/layout"
 </style>

@@ -1,10 +1,11 @@
 <template>
-<RouterView />
+	<RouterView />
 </template>
 
-<script>
+<script lang="ts" setup>
 	
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "./styles/layout"
 </style>

@@ -3,7 +3,7 @@
 
 <script lang="ts" setup>
  const router = useRouter()
- router.replace('/userManage')
+ router.replace('/demo')
 </script>
 
 <style>

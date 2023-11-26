@@ -23,7 +23,7 @@ export default defineConfig(({command, mode})=>{
 			port: 8081,
 			https:false,
 			open:true,
-			strictPort:true,
+			strictPort:false,
 			hmr:true,
 	//		proxy:{
 	//			[env.VITE_BASE_API]: {
@@ -41,10 +41,16 @@ export default defineConfig(({command, mode})=>{
 		    cssCodeSplit: true, //启用/禁用 CSS 代码拆分
 		    assetsInlineLimit: 4096, // 图片转base64编码的阈值
 		    sourcemap: false, //构建后是否生成 source map 文件
-		    minify: 'esbuild',
-		    target:['chrome63'],
+		    minify: 'terser',
+		    
+		    terserOptions:{
+		    	drop_console: true,
+		    	drop_debugger: true
+		    },
+		    target: ['chrome63'],
 			rollupOptions:{
 				output:{
+					compact:true,
 					chunkFileNames:`static/js/[name].[hash:9].${timestamp}.js`,
 					entryFileNames:`static/js/[name].[hash:9].${timestamp}.js`,
 					assetFileNames:`static/[ext]/[name].[hash:9].${timestamp}.[ext]`,
@@ -53,7 +59,7 @@ export default defineConfig(({command, mode})=>{
 	//					pinia:['pinia'],
 	//					elementPlus:['element-plus']
 //					}
-				}
+				},
 			}
 		},
 	  plugins: [
@@ -71,12 +77,12 @@ export default defineConfig(({command, mode})=>{
 	      	'vue-router',
 	      	'pinia'
 	      ],
-	      dirs:['src/stores'],
+	      dirs:['src/stores', 'src/composables'],
 	      dts:"src/types/auto-import.d.ts"
 	    }),
 	    Components({
 	      resolvers: [ElementPlusResolver()],
-	      dirs:['src/components', 'src/composables'],
+	      dirs:['src/components'],
 	      dts:"src/types/components.d.ts"
 	    }),
 	    Pages({

@@ -10,15 +10,17 @@ import {
 } from 'unocss'
 
 export default defineConfig({
-  shortcuts: [
-    // ...
-  ],
-  theme: {
-    colors: {
-      // ...
-      theme:""
-    }
+  shortcuts: {
+		'keep-all': 'ws-nowrap break-keep',
+		'text-exceed': 'truncate break-keep'
   },
+//	theme: {
+//	    colors: {
+//	      // ...
+//	      bg:"#FFF",
+//	      base:"blue"
+//	    },
+//	},
   presets: [
     presetUno(),
     presetAttributify(),

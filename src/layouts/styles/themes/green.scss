@@ -1,4 +1,4 @@
-.global-theme-green{
+.green{
     /**
      * 头部全局颜色    
      */
@@ -7,8 +7,8 @@
     /**
      * 侧边栏全局颜色变量    
      */
-    --theme-base-text-color: #000000;
-    --theme-bars-btn-text-color: #325304;
-    --theme-menus-group-title-text-color: #64854c;
-    --theme-menus-group-list-item-color: #333;
+    --base-text-color: #000000;
+    --bars-btn-text-color: #325304;
+    --menus-group-title-text-color: #64854c;
+    --menus-group-list-item-color: #333;
 }
