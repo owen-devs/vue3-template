@@ -2,13 +2,19 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { setupLayouts } from "virtual:generated-layouts"
 import generatedRoutes from "virtual:generated-pages"
 //import routes from "~pages"
+import { nprogress } from "./nprogress"
+
+
 console.log(generatedRoutes)
 
 const routes = setupLayouts(generatedRoutes)//变嵌套路由
 console.log(routes)
 
+//动态菜单TODO
+
+
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes
 //routes: [
 //  {
@@ -27,5 +33,6 @@ const router = createRouter({
 //]
 })
 
+nprogress(router)
 
 export default router

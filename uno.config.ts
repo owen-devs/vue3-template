@@ -9,11 +9,16 @@ import {
   transformerVariantGroup
 } from 'unocss'
 
+import { dynamicIcons } from "./src/styles/dynamicIcons"
+
 export default defineConfig({
   shortcuts: {
 		'keep-all': 'ws-nowrap break-keep',
 		'text-exceed': 'truncate break-keep'
   },
+  safelist:[
+  	...dynamicIcons
+  ],
 //	theme: {
 //	    colors: {
 //	      // ...

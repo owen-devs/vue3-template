@@ -26,10 +26,10 @@ export default defineConfig(({command, mode})=>{
 			strictPort:false,
 			hmr:true,
 	//		proxy:{
-	//			[env.VITE_BASE_API]: {
-	//      target: `http://100.100.2.11:8056`, //测试环境
+	//			['^${env.VITE_BASE_API}']: {
+	//      target: `env.VITE_PROXY_TARGET_URL`, //测试环境
 	//      changeOrigin: true,
-	//      pathRewrite: {
+	//      rewrite: {
 	//        ['^' + env.VITE_BASE_API]: ''
 	//      }
 	//    },
