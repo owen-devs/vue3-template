@@ -78,16 +78,19 @@ export default defineConfig(({command, mode})=>{
 	      	'pinia'
 	      ],
 	      dirs:['src/stores', 'src/composables'],
-	      dts:"src/types/auto-import.d.ts"
+	      dts:"src/types/auto-import.d.ts",
+		  vueTemplate: true
+
 	    }),
 	    Components({
 	      resolvers: [ElementPlusResolver()],
 	      dirs:['src/components'],
+		  include: [/\.vue$/, /\.vue\?vue/],
 	      dts:"src/types/components.d.ts"
 	    }),
 	    Pages({
 	    	dirs:['src/views'],
-	    	excludes:['**/components/*.vue'],
+	    	excludes:['**/components/**/*.vue'],
 	    	extendRoute(route, parent){
 	    		if(route.path === '/'){
 	    			return {
