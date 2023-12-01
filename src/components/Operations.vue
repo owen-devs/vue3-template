@@ -25,8 +25,8 @@ defineProps({
     }
 })
 
-const wrapper = ref()
-const inner = ref()
+const wrapper = ref<HTMLElement | null>(null)
+const inner = ref<HTMLElement | null>(null)
 const slots: Readonly<any> = useSlots()
 let slotsNode: VNode[] = slots?.default()
 slotsNode = slotsNode.filter((node) => node.type.toString() !== 'Symbol(Comment)' && node.type.toString() !== 'Symbol()' && node.type.toString() !== 'Symbol(v-cmt)')

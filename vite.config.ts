@@ -72,7 +72,7 @@ export default defineConfig(({ command, mode }) => {
             AutoImport({
                 resolvers: [ElementPlusResolver()],
                 imports: ['vue', '@vueuse/core', 'vue-router', 'pinia'],
-                dirs: ['src/stores', 'src/composables'],
+                dirs: ['src/stores', 'src/composables', 'src/types/utilities.d'],
                 dts: 'src/types/auto-import.d.ts',
                 vueTemplate: true
             }),

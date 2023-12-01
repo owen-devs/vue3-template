@@ -1,4 +1,4 @@
-export function usePagination(pagination?: Object) {
+export function usePagination(pagination?: Pagination) {
     const total = ref(0)
     const pageSize = ref(pagination?.pageSize || 10)
     const pageNo = ref(1)
