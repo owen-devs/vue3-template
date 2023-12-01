@@ -1,3 +1,1 @@
-export const dynamicIcons = [
-	'i-ph-666'
-]
+export const dynamicIcons = ['i-ph-666']

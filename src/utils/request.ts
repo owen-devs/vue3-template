@@ -1,23 +1,24 @@
 import axios from 'axios'
 import Cookies from 'js-cookie'
 
-function createService(options){
+function createService(options: any) {
     const service = axios.create(options)
 
     service.interceptors.request.use(
-        config=>{
-            config.headers['Authorization'] = 'Bearer ' + Cookies.get( 'access_token')
+        (config) => {
+            config.headers['Authorization'] = 'Bearer ' + Cookies.get('access_token')
             return config
-        }, error=>{
+        },
+        (error) => {
             return Promise.reject(error)
         }
     )
 
     service.interceptors.response.use(
-        response=>{
-        	if(response?.config?.download){
-        		return response
-        	}
+        (response) => {
+            if (response?.config?.download) {
+                return response
+            }
             const res = response.data
             if (!res.success) {
                 ElMessage.error(res.msg || '请求错误！')
@@ -25,8 +26,8 @@ function createService(options){
             }
             return res.result
         },
-        error=>{
-            ElMessage.error( error.response.msg || error.response.status)
+        (error) => {
+            ElMessage.error(error.response.msg || error.response.status)
             return Promise.reject(error)
         }
     )
@@ -34,16 +35,16 @@ function createService(options){
 }
 
 const request = createService({
-    baseURL:  process.env.VITE_BASE_API,
+    baseURL: process.env.VITE_BASE_API,
     timeout: 15000
 })
 
 const download = createService({
-    baseURL:  process.env.VITE_BASE_API,
+    baseURL: process.env.VITE_BASE_API,
     responseType: 'arraybuffer',
-    headers:{'content-type':'application/x-www-form-urlencoded'},
-    download:true,
+    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    download: true,
     timeout: 0
 })
 
-export {request, download}
+export { request, download }

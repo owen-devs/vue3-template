@@ -1,16 +1,16 @@
-.el-overlay.el-drawer-fade-enter-active{
+.el-overlay.el-drawer-fade-enter-active {
     transition: all 1s;
 
-    .el-drawer.rtl{
+    .el-drawer.rtl {
         transition: none;
         animation-name: bounceInRight;
         animation-duration: 1s;
     }
 }
-.el-overlay.el-drawer-fade-leave-active{
+.el-overlay.el-drawer-fade-leave-active {
     transition: all 1s !important;
 
-   .el-drawer.rtl{
+    .el-drawer.rtl {
         transform: translateX(0%);
         transition: none;
         animation-name: bounceOutRight;

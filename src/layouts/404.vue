@@ -1,11 +1,9 @@
 <template>
-	<img src="" />
+    <img src="" />
 </template>
 
-<script lang="ts" setup>
-	
-</script>
+<script lang="ts" setup></script>
 
 <style lang="scss" scoped>
-@import "./styles/layout"
+@import './styles/layout';
 </style>
