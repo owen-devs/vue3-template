@@ -38,7 +38,7 @@ const isOvered = ref<Boolean>(false)
 const checkOvered = () => inner.value?.offsetWidth > wrapper.value?.offsetWidth
 
 const btnSplit = async () => {
-    let moreFlag = 0,
+    let moreLen = 0,
         i = 0,
         j = 0,
         len = slotsNode.length
@@ -53,7 +53,7 @@ const btnSplit = async () => {
 
             await nextTick()
 
-            moreFlag = len - i + i
+            moreLen = len - i + i
             j = i
 
             if (checkOvered()) {
@@ -65,7 +65,7 @@ const btnSplit = async () => {
         }
     }
 
-    if (moreFlag > 0) {
+    if (moreLen > 0) {
         moreBtns.value = []
         for (; j < len; j++) {
             moreBtns.value.push(slotsNode[j])
