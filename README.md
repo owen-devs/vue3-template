@@ -4,8 +4,6 @@ This template should help get you started developing with Vue 3 in Vite.
 
 ## Versions
 
-<p align="center">
-
 ![](https://img.shields.io/badge/vite-^4.4.11-646CFF?logo=vite)
 ![](https://img.shields.io/badge/vue-^3.3.4-4FC08D?logo=vuedotjs)
 ![](https://img.shields.io/badge/vue--router-^4.2.5-4FC08D?logo=vuedotjs)
@@ -22,8 +20,6 @@ This template should help get you started developing with Vue 3 in Vite.
 
 <!-- <img src='https://gitee.com/xu/vue3-template/badge/star.svg?theme=dark' alt='star' />
 <img src='https://gitee.com/xu/vue3-template/badge/fork.svg?theme=dark' alt='fork' /> -->
-
-</p>
 
 ## Github Stats
 
