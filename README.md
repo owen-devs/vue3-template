@@ -4,7 +4,7 @@ This template should help get you started developing with Vue 3 in Vite.
 
 ## Versions
 
-<p align="center" dir='auto'>
+<p align="center">
 
 ![](https://img.shields.io/badge/vite-^4.4.11-646CFF?logo=vite)
 ![](https://img.shields.io/badge/vue-^3.3.4-4FC08D?logo=vuedotjs)
