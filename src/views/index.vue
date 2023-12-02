@@ -4,5 +4,3 @@
 const router = useRouter()
 router.replace('/demo')
 </script>
-
-<style></style>

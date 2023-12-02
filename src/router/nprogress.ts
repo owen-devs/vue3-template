@@ -5,6 +5,9 @@ export function nprogress(router: any) {
         if (to.path !== from.path) {
             NProgress.start()
         }
+        if (to.meta.title) {
+            document.title = to.meta.title
+        }
 
         next() //进入下一个页面
     })
