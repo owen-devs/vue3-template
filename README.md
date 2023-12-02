@@ -23,7 +23,7 @@ This template should help get you started developing with Vue 3 in Vite.
 
 ## Github Stats
 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=w461662596)](https://github.com/anuraghazra/github-readme-stats)
+[![GitHub stats](https://github-readme-stats.vercel.app/api?username=w461662596)](https://github.com/anuraghazra/github-readme-stats)
 
 ## LeetCode Stats
 
