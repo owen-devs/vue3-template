@@ -4,6 +4,7 @@
         <Breadcrumb />
         <el-switch
             v-model="theme"
+            @change="toggleDark()"
             active-value="dark"
             inactive-value="default"
             class="ml-2"
@@ -47,14 +48,8 @@ const { pageSize, pageNo, total } = usePagination()
 //	const theme = ref(true)
 localStorage.setItem('theme', 'blue')
 
-const theme = ref('defult')
-watch(
-    () => theme.value,
-    (val) => {
-        console.log(val)
-        toggleDark()
-    }
-)
+const theme = ref('default')
+
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
 
