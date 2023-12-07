@@ -1,5 +1,5 @@
 <template>
-    <div class="w-100% inline-flex overflow-hidden" ref="wrapper">
+    <div class="w-100% inline-flex overflow-hidden" ref="wrapper" :key="props.key">
         <div ref="inner" class="w-auto ws-nowrap break-keep inline-flex items-center">
             <component :is="item" v-for="item in commonBtns" :key="item.key" />
             <el-dropdown v-if="isOvered">
@@ -23,7 +23,7 @@
 <script lang="ts" setup>
 import type { VNode } from 'vue'
 
-defineProps({
+const props = defineProps({
     key: {
         required: true
     }
