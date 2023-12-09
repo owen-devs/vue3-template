@@ -37,7 +37,7 @@
                 <el-button link @click.stop="showBtn('11212.txt')">编辑</el-button>
             </Operations>
         </div>
-        <div class="test-text">测试文字变量</div>
+        <div class="test-text h-1000px">测试文字变量</div>
     </main>
 </template>
 

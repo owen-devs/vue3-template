@@ -1,15 +1,11 @@
 <template>
     <div class="">
         <el-row>
-            <el-col :span="24">
-                <nav-bar />
-            </el-col>
-        </el-row>
-        <el-row>
             <el-col :span="6">
                 <side-bar />
             </el-col>
             <el-col :span="18">
+                <nav-bar />
                 <app-main />
             </el-col>
         </el-row>

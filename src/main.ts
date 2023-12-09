@@ -1,4 +1,3 @@
-import './assets/main.css'
 import './styles/main.scss'
 import 'virtual:uno.css'
 import 'animate.css'
