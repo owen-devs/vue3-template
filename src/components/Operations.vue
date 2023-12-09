@@ -1,10 +1,6 @@
 <template>
-    <div class="w-100% inline-flex overflow-hidden" ref="wrapper" :key="'wrapper_' + props.key">
-        <div
-            ref="inner"
-            class="w-auto ws-nowrap break-keep inline-flex items-center"
-            :key="'inner_' + props.key"
-        >
+    <div class="w-100% inline-flex overflow-hidden" ref="wrapper">
+        <div ref="inner" class="w-auto ws-nowrap break-keep inline-flex items-center">
             <component :is="item" v-for="item in commonBtns" :key="item.key" />
             <el-dropdown v-if="isOvered">
                 <span class="pl-10px">更多</span>
@@ -25,15 +21,6 @@
 </template>
 
 <script lang="ts" setup>
-import type { VNode } from 'vue'
-
-const props = defineProps({
-    key: {
-        type: any,
-        required: true
-    }
-})
-
 const wrapper = ref<HTMLElement | null>(null)
 const inner = ref<HTMLElement | null>(null)
 const slots: Readonly<any> = useSlots()

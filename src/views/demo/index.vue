@@ -37,6 +37,7 @@
                 <el-button link @click.stop="showBtn('11212.txt')">编辑</el-button>
             </Operations>
         </div>
+        <div class="test-text">测试文字变量</div>
     </main>
 </template>
 
@@ -70,6 +71,9 @@ console.log(route)
 .header-text {
     color: var(--base-bg-color);
     @apply bg-red;
+}
+.test-text {
+    color: var(--el-color-0);
 }
 </style>
 <route lang="yaml">

@@ -1,5 +1,5 @@
 <template>
-    <div class="layout-container">
+    <div class="">
         <el-row>
             <el-col :span="24">
                 <nav-bar />
@@ -22,6 +22,4 @@ import sideBar from './components/sideBar'
 import appMain from './components/appMain'
 </script>
 
-<style lang="scss" scoped>
-@import './styles/layout';
-</style>
+<style lang="scss" scoped></style>

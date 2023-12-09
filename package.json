@@ -52,5 +52,8 @@
         "vite-plugin-vue-layouts": "^0.8.0",
         "vitest": "^0.34.6",
         "vue-tsc": "^1.8.19"
+    },
+    "rules": {
+        "vue/multi-word-component-names": "off"
     }
 }

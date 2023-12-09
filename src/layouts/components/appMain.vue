@@ -2,7 +2,7 @@
     <el-scrollbar class="main-scroll-bar" max-height="calc(100vh - 50px)">
         <router-view v-slot="{ Component, route }">
             <transition>
-                <div>
+                <div v-show="true">
                     <keep-alive>
                         <component :key="route.fullPath" :is="Component" />
                     </keep-alive>

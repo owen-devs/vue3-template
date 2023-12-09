@@ -6,7 +6,7 @@ export function nprogress(router: any) {
             NProgress.start()
         }
         if (to.meta.title) {
-            document.title = to.meta.title
+            document.title = import.meta.env.VITE_APP_TITLE + '-' + to.meta.title
         }
 
         next() //进入下一个页面

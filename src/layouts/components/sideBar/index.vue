@@ -1,14 +1,7 @@
 <template>
-    <div class="menus-bars">左侧菜单</div>
+    <div class="flex flex-row items-stretch py-0.5em">左侧菜单</div>
 </template>
 
 <script lang="ts" setup></script>
 
-<style lang="scss" scoped>
-.menus-bars {
-    display: flex;
-    align-items: stretch;
-    flex-direction: row;
-    padding: 0 0.5em;
-}
-</style>
+<style lang="scss" scoped></style>
