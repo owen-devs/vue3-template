@@ -34,14 +34,13 @@
                 <el-button link @click.stop="showBtn('11212.txt')">下载</el-button>
                 <el-button link @click.stop="showBtn('11212.txt')">删除</el-button>
                 <el-button link @click.stop="showBtn('11212.txt')">详情</el-button>
-                <el-button link @click.stop="showBtn('11212.txt')">编辑情报</el-button>
+                <el-button link @click.stop="showBtn('11212.txt')">编辑</el-button>
             </Operations>
         </div>
     </main>
 </template>
 
 <script lang="ts" setup>
-import type OperationsVue from '@/components/Operations.vue'
 import { download } from '@/utils/download'
 const { pageSize, pageNo, total } = usePagination()
 

@@ -1,1 +1,1 @@
-export function useElUpload(pagination?: Object) {}
+export function useElUpload() {}
