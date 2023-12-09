@@ -1,6 +1,5 @@
 <template>
     <Breadcrumb />
-
     <div>三级有菜单页{{ route.name }}</div>
 </template>
 <script lang="ts" setup>

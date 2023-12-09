@@ -1,5 +1,8 @@
 <template>
-    <el-scrollbar class="main-scroll-bar" max-height="calc(100vh - 50px)">
+    <el-scrollbar
+        class="main-scroll-bar animate__animated animate__slideInUp"
+        max-height="calc(100vh - 50px)"
+    >
         <router-view v-slot="{ Component, route }">
             <transition>
                 <div v-show="true">
