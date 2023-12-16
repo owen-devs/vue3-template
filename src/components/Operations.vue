@@ -21,6 +21,9 @@
 </template>
 
 <script lang="ts" setup>
+/**
+ * @description:常用于table表格操作列按钮组，超出列宽自动出现[更多]下拉菜单
+ */
 const wrapper = ref<HTMLElement | null>(null)
 const inner = ref<HTMLElement | null>(null)
 const slots: Readonly<any> = useSlots()

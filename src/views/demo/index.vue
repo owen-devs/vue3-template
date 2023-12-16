@@ -65,6 +65,10 @@ const showBtn = (text: string) => {
 
 const route = useRoute()
 console.log(route)
+
+const { count, increment } = useCounterStore()
+increment()
+console.log(count)
 </script>
 
 <style lang="scss" scoped>
