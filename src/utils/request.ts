@@ -27,20 +27,25 @@ function createService(options: any) {
             return res.result
         },
         (error) => {
-            ElMessage.error(error.response.msg || error.response.status)
+        	console.log(error.response.data.code)
+        	if(error.response.data.code === 401){
+        		window.location.href = "http://localhost:9999/auth-api/login"
+        		return
+        	}
+            ElMessage.error(error.response.data.msg || error.response.status)
             return Promise.reject(error)
         }
     )
     return service
 }
-
+console.log(import.meta.env)
 const request = createService({
-    baseURL: process.env.VITE_BASE_API,
+    baseURL: import.meta.env.VITE_BASE_API,
     timeout: 15000
 })
 
 const download = createService({
-    baseURL: process.env.VITE_BASE_API,
+    baseURL: import.meta.env.VITE_BASE_API,
     responseType: 'arraybuffer',
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
     download: true,

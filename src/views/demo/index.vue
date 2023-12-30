@@ -13,7 +13,14 @@
             style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
         />
 
-        <el-dialog class="" v-model="dialogVisible" title="Tips" width="30%" draggable>
+        <el-dialog
+            append-to-body
+            class=""
+            v-model="dialogVisible"
+            title="Tips"
+            width="30%"
+            draggable
+        >
             <span>It's a draggable Dialog</span>
             <template #footer>
                 <span class="dialog-footer">
@@ -24,7 +31,7 @@
         </el-dialog>
         <el-button @click="dialogVisible = true">打开对话框</el-button>
 
-        <el-drawer v-model="drawer" title="I am the title" direction="rtl">
+        <el-drawer append-to-body v-model="drawer" title="I am the title" direction="rtl">
             <span>Hi, there!</span>
         </el-drawer>
         <el-button @click="drawer = true">打开抽屉</el-button>

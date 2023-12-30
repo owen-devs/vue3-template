@@ -24,16 +24,18 @@ export default defineConfig(({ command, mode }) => {
             https: false,
             open: true,
             strictPort: false,
-            hmr: true
-            //		proxy:{
-            //			['^${env.VITE_BASE_API}']: {
-            //      target: `env.VITE_PROXY_TARGET_URL`, //测试环境
-            //      changeOrigin: true,
-            //      rewrite: {
-            //        ['^' + env.VITE_BASE_API]: ''
-            //      }
-            //    },
-            //		}
+            hmr: true,
+            proxy: {
+                [`${env.VITE_BASE_API}`]: {
+                    target: env.VITE_PROXY_TARGET_URL, //测试环境
+                    changeOrigin: true,
+                    rewrite: (path) => path.replace(env.VITE_BASE_API, '')
+                },
+                '/login': {
+                    target: env.VITE_PROXY_TARGET_URL,
+                    changeOrigin: true
+                }
+            }
         },
         build: {
             outDir: './dist/',
@@ -106,7 +108,18 @@ export default defineConfig(({ command, mode }) => {
             alias: {
                 '@': fileURLToPath(new URL('./src', import.meta.url))
             },
-            extensions: ['.ts', '.vue', '.json', '.js', '.jsx', '.tsx', '.scss', '.css', '.mjs', '.cjs']
+            extensions: [
+                '.ts',
+                '.vue',
+                '.json',
+                '.js',
+                '.jsx',
+                '.tsx',
+                '.scss',
+                '.css',
+                '.mjs',
+                '.cjs'
+            ]
         }
     }
 })
