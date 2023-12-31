@@ -1,5 +1,5 @@
 <template>
-    <el-breadcrumb separator=">">
+    <el-breadcrumb class="pb-1em" separator=">">
         <el-breadcrumb-item v-for="item in breadList" :key="item.path" :to="{ path: item.path }">
             {{ item.title }}
         </el-breadcrumb-item>

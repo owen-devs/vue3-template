@@ -6,7 +6,7 @@ function createService(options: any) {
 
     service.interceptors.request.use(
         (config) => {
-            config.headers['Authorization'] = 'Bearer ' + Cookies.get('access_token')
+            // config.headers['Authorization'] = 'Bearer ' + Cookies.get('access_token')
             return config
         },
         (error) => {
@@ -27,11 +27,11 @@ function createService(options: any) {
             return res.result
         },
         (error) => {
-        	console.log(error.response.data.code)
-        	if(error.response.data.code === 401){
-        		window.location.href = "http://localhost:9999/auth-api/login"
-        		return
-        	}
+            console.log(error.response.data.code)
+            if (error.response.data.code === 401) {
+                window.location.href = 'http://localhost:9999/auth-api/login'
+                return
+            }
             ElMessage.error(error.response.data.msg || error.response.status)
             return Promise.reject(error)
         }

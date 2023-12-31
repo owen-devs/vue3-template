@@ -4,6 +4,7 @@ export function usePagination(pagination?: Pagination) {
     const pageNo = ref(1)
 
     function sizeChange(size: number) {
+        pageNo.value = 1
         pageSize.value = size
     }
 
