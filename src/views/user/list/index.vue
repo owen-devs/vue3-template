@@ -1,11 +1,11 @@
 <template>
     <div class="uset-list-container">
         <div class="flex justify-between items-center">
-            <h3>用户管理列表</h3>
+            <h4>用户管理列表</h4>
             <div class="flex justify-end items-center">
-                <el-button>
+                <el-button type="primary" @click="createUser">
                     新建用户
-                    <el-icon class="ml-0.5em"><i class="i-ph-plus-circle" /></el-icon>
+                    <el-icon class="ml-0.5em"><i class="i-ph-plus-circle-light" /></el-icon>
                 </el-button>
             </div>
         </div>
@@ -27,11 +27,32 @@
         </div>
 
         <el-table :data="tableData" style="width: 100%">
-            <el-table-column prop="userName" label="姓名" width="180" />
-            <el-table-column prop="age" label="年龄" />
-            <el-table-column prop="userGender" label="性别" />
-            <el-table-column prop="email" label="邮箱" />
-            <el-table-column prop="createTime" label="创建时间" />
+            <el-table-column prop="userName" label="姓名" width="100" />
+            <el-table-column prop="age" label="年龄" width="100" />
+            <el-table-column prop="userGender" label="性别" width="100" />
+            <el-table-column prop="email" label="邮箱" min-width="150" />
+            <el-table-column prop="createTime" label="创建时间" min-width="120" />
+            <el-table-column prop="updateTime" label="最近更新时间" min-width="120" />
+            <el-table-column label="操作" width="150">
+                <template #default="{ row }">
+                    <Operations :key="row.userId">
+                        <el-button type="primary" size="small" @click="updateUser(row)">
+                            编辑
+                        </el-button>
+                        <el-popconfirm
+                            width="180"
+                            confirm-button-text="确定"
+                            cancel-button-text="取消"
+                            title="确定要删除用户吗？"
+                            @confirm="deleteUser(row)"
+                        >
+                            <template #reference>
+                                <el-button size="small">删除</el-button>
+                            </template>
+                        </el-popconfirm>
+                    </Operations>
+                </template>
+            </el-table-column>
         </el-table>
         <el-pagination
             class="mt-0.5em justify-end"
@@ -68,6 +89,10 @@ const getUserList = (refresh?: boolean) => {
         }
     )
 }
+
+const createUser = () => {}
+const updateUser = (row) => {}
+const deleteUser = (row) => {}
 
 watch(
     () => [pageNo.value, pageSize.value],
