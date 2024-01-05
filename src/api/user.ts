@@ -13,6 +13,6 @@ export function getUserListByPage(params, data) {
         url: '/user/queryPage',
         method: 'post',
         params,
-    	data
+        data
     })
 }

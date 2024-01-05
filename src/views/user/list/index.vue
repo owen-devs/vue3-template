@@ -1,6 +1,31 @@
 <template>
     <div class="uset-list-container">
-        <h3>用户管理列表</h3>
+        <div class="flex justify-between items-center">
+            <h3>用户管理列表</h3>
+            <div class="flex justify-end items-center">
+                <el-button>
+                    新建用户
+                    <el-icon class="ml-0.5em"><i class="i-ph-plus-circle" /></el-icon>
+                </el-button>
+            </div>
+        </div>
+        <div class="pt-0.5em flex justify-between items-center">
+            <div></div>
+            <div>
+                <el-input
+                    v-model="searchs.userName"
+                    @change="getUserList(true)"
+                    placeholder="请输入搜索关键字"
+                >
+                    <template #append>
+                        <el-button type="primary" @click="getUserList(true)">
+                            <el-icon><i class="i-ph-magnifying-glass" /></el-icon>
+                        </el-button>
+                    </template>
+                </el-input>
+            </div>
+        </div>
+
         <el-table :data="tableData" style="width: 100%">
             <el-table-column prop="userName" label="姓名" width="180" />
             <el-table-column prop="age" label="年龄" />
@@ -27,21 +52,26 @@ const { pageNo, pageSize, total, currentChange, sizeChange } = usePagination()
 
 const tableData = ref([])
 
-const getUserList = () => {
-    getUserListByPage(
-        { pageNo: pageNo.value, pageSize: pageSize.value },
-        { userGender: '男' }
-    ).then((res) => {
-        console.log(res)
-        tableData.value = res?.list || []
-        total.value = res.total || 0
-    })
+const searchs = ref({
+    userName: ''
+})
+
+const getUserList = (refresh?: boolean) => {
+    if (refresh) {
+        pageNo.value = 1
+    }
+    getUserListByPage({ pageNo: pageNo.value, pageSize: pageSize.value }, searchs.value).then(
+        (res) => {
+            console.log(res)
+            tableData.value = res?.list || []
+            total.value = res.total || 0
+        }
+    )
 }
 
 watch(
     () => [pageNo.value, pageSize.value],
     () => {
-        console.log(pageNo.value)
         getUserList()
     }
 )

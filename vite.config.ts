@@ -86,7 +86,7 @@ export default defineConfig(({ command, mode }) => {
             }),
             Pages({
                 dirs: ['src/views'],
-                excludes: ['**/components/**/*.vue'],
+                excludes: ['**/components/**'],
                 extendRoute(route, parent) {
                     if (route.path === '/') {
                         return {
