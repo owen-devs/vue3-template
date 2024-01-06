@@ -27,8 +27,9 @@
         </div>
         <el-table :data="tableData" style="width: 100%" v-loading="loading">
             <el-table-column prop="userName" label="姓名" width="100" />
-            <el-table-column prop="age" label="年龄" width="100" />
-            <el-table-column prop="userGender" label="性别" :formatter="formatGender" width="100" />
+            <el-table-column prop="userAccount" label="账号" width="120" />
+            <el-table-column prop="age" label="年龄" width="80" />
+            <el-table-column prop="userGender" label="性别" :formatter="formatGender" width="80" />
             <el-table-column prop="email" label="邮箱" min-width="150" />
             <el-table-column prop="createTime" label="创建时间" min-width="150" />
             <el-table-column prop="updateTime" label="最近更新时间" min-width="150" />
@@ -81,8 +82,7 @@ const { pageNo, pageSize, total, currentChange, sizeChange } = usePagination()
 
 const tableData = ref([])
 const searchs = ref({
-    userName: '',
-    userGender: '1'
+    userName: ''
 })
 const showAddUser = ref(false)
 const rows = ref({})
