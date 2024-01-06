@@ -15,7 +15,6 @@
                 <el-input
                     v-model="searchs.userName"
                     placeholder="请输入用户名"
-                    clearable
                     @change="getUserList(true)"
                 >
                     <template #append>
@@ -82,7 +81,8 @@ const { pageNo, pageSize, total, currentChange, sizeChange } = usePagination()
 
 const tableData = ref([])
 const searchs = ref({
-    userName: ''
+    userName: '',
+    userGender: '1'
 })
 const showAddUser = ref(false)
 const rows = ref({})
