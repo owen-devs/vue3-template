@@ -30,7 +30,7 @@ function createService(options: any) {
             console.log(error.response.data.code)
             if (error.response.data.code === 401) {
                 window.location.href = 'http://localhost:9999/auth-api/login'
-                return
+                return Promise.reject(error)
             }
             ElMessage.error(error.response.data.msg || error.response.status)
             return Promise.reject(error)
@@ -41,7 +41,7 @@ function createService(options: any) {
 console.log(import.meta.env)
 const request = createService({
     baseURL: import.meta.env.VITE_BASE_API,
-    timeout: 15000
+    timeout: 35000
 })
 
 const download = createService({
