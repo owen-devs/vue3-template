@@ -125,7 +125,13 @@ const getUserList = (refresh?: boolean) => {
 }
 
 const formatGender = (row: any) => {
-    return row.userGender == '1' ? '男' : '女'
+    const genderMap = {
+        '1': '男',
+        '2': '女'
+    }
+    return row.userGender == '1' || row.userGender == '2'
+        ? genderMap[row.userGender]
+        : row.userGender
 }
 
 watch(

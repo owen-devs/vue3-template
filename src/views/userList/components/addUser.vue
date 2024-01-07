@@ -79,13 +79,13 @@ const formRef = ref(null)
 
 const forms = ref({
     userId: '',
-    userName: '测试用户5',
-    password: '123456',
-    confirmPassword: '123456',
-    email: '158@123.com',
+    userName: '',
+    password: '',
+    confirmPassword: '',
+    email: '',
     userGender: '1',
-    age: 18,
-    userAccount: 'account_005'
+    age: 1,
+    userAccount: ''
 })
 
 const rules = ref({

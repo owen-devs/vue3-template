@@ -29,7 +29,9 @@ function createService(options: any) {
         (error) => {
             console.log(error.response.data.code)
             if (error.response.data.code === 401) {
-                window.location.href = 'http://localhost:9999/auth-api/login'
+                const currentUrl = encodeURIComponent(window.location.href)
+                window.location.href =
+                    'http://localhost:9999/auth-api/login?redirectUrl=' + currentUrl
                 return Promise.reject(error)
             }
             ElMessage.error(error.response.data.msg || error.response.status)
