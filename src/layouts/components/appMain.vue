@@ -7,7 +7,7 @@
             <transition>
                 <div v-show="true">
                     <keep-alive>
-                        <component :key="route.fullPath" :is="Component" />
+                        <component :key="route.fullPath" :is="Component" class="p-1em" />
                     </keep-alive>
                 </div>
             </transition>

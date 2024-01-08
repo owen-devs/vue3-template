@@ -1,7 +1,6 @@
 <template>
     <Breadcrumb />
-
-    <div>四级有菜单页{{ route.name }}</div>
+    <div>三级有菜单页{{ route.name }}</div>
 </template>
 <script lang="ts" setup>
 const route = useRoute()
@@ -9,6 +8,6 @@ console.log(route)
 </script>
 <route lang="yaml">
 meta:
-    title: 四级菜单页,
-    parent: demo,
+    title: 三级菜单页
+    parent: demo
 </route>

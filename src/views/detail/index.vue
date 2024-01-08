@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <el-descriptions title="个人信息">
+        <el-descriptions title="详情页类layout用法-不带菜单导航">
             <el-descriptions-item label="用户名">{{ user.userName }}</el-descriptions-item>
             <el-descriptions-item label="账号">{{ user.userAccount }}</el-descriptions-item>
             <el-descriptions-item label="性别">{{ user.userGender }}</el-descriptions-item>
@@ -28,5 +28,6 @@ onMounted(() => {
 </script>
 <route lang="yaml">
 meta:
-    title: 用户个人信息
+    layout: detail
+    title: 用户详情页
 </route>

@@ -1,10 +1,10 @@
 <template>
     <div class="">
         <el-row>
-            <el-col :span="4">
+            <el-col :span="5">
                 <side-bar />
             </el-col>
-            <el-col :span="20">
+            <el-col :span="19">
                 <nav-bar />
                 <app-main />
             </el-col>

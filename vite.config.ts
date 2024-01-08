@@ -86,13 +86,16 @@ export default defineConfig(({ command, mode }) => {
             }),
             Pages({
                 dirs: ['src/views'],
-                excludes: ['**/components/**/*.vue'],
+                caseSensitive: true,
+                exclude: ['**/components/*.vue'],
                 extendRoute(route, parent) {
                     if (route.path === '/') {
-                        return {
-                            ...route,
-                            redirect: ''
-                        }
+                        // Index is unauthenticated.
+                        return route
+                    }
+                    // Augment the route with meta that indicates that the route requires authentication.
+                    return {
+                        ...route
                     }
                 }
             }),
