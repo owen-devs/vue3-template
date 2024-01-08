@@ -71,7 +71,7 @@ const btnSplit = async () => {
 
             await nextTick()
 
-            moreLen = len - i + i
+            moreLen = len - i + 1
             j = i
 
             if (checkOvered()) {
