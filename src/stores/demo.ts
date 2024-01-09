@@ -1,8 +1,8 @@
 //options 写法
 export const useDemoStore = defineStore('demo', {
-    state: () => {
+    state: () => ({
         count: 0
-    },
+    }),
     getters: {
         double: (state) => state.count * 2
     },

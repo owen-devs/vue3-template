@@ -36,9 +36,7 @@
             <el-table-column label="操作" width="180">
                 <template #default="{ row }">
                     <Operations :key="row.userId">
-                        <el-button size="small" type="primary" @click="editUser(row)">
-                            编辑
-                        </el-button>
+                        <el-button type="primary" @click="editUser(row)" link>编辑</el-button>
                         <el-popconfirm
                             title="确定要删除用户?"
                             width="180"
@@ -47,9 +45,13 @@
                             @confirm="() => deleteUserr(row)"
                         >
                             <template #reference>
-                                <el-button size="small">删除</el-button>
+                                <el-button link>删除</el-button>
                             </template>
                         </el-popconfirm>
+                        <el-button link>测试</el-button>
+                        <el-button type="primary" link>测试长文字</el-button>
+                        <el-button link>测试3</el-button>
+                        <el-button type="primary" link>测试4</el-button>
                     </Operations>
                 </template>
             </el-table-column>

@@ -1,9 +1,8 @@
 import { getUserInfo } from '@/api/user'
 export const useUserInfoStore = defineStore('UserInfo', {
-    state: () => {
-        userInfo: {
-        }
-    },
+    state: () => ({
+        userInfo: {}
+    }),
     actions: {
         getUserInfo() {
             getUserInfo().then((res) => {

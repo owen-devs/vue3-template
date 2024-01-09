@@ -1,31 +1,40 @@
 <template>
-    <div class="">
-        <el-menu :default-active="active" :collapse="isCollapse">
+    <el-scrollbar max-height="100vh">
+        <el-menu
+            :default-active="active"
+            :collapse="collapseStore.isCollapse"
+            class="!border-r-none"
+        >
             <SubMenuItem :item="item" v-for="item in menus" :key="item?.path" />
         </el-menu>
-    </div>
+    </el-scrollbar>
 </template>
 <script lang="ts" setup>
 const router = useRouter()
 const active = computed(() => router.currentRoute.value.path)
-const isCollapse = ref(false)
+
+const collapseStore = useCollapseStore()
 
 const menus = ref([
     {
         path: '/userList',
-        title: '用户管理'
+        title: '用户管理',
+        icon: 'i-ph-user-list-duotone'
     },
     {
         path: '/userInfo',
-        title: '用户个人信息'
+        title: '用户个人信息',
+        icon: 'i-ph-user-circle-duotone'
     },
     {
         path: '/detail',
-        title: '用户个人详情'
+        title: '用户个人详情',
+        icon: 'i-ph-dots-three-circle-vertical-fill'
     },
     {
         title: '无限菜单',
-        path: '',
+        path: '/loop',
+        icon: 'i-ph-list-bullets-duotone',
         children: [
             {
                 path: '/demo',

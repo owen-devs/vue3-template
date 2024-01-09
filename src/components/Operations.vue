@@ -3,7 +3,7 @@
         <div ref="inner" class="w-auto ws-nowrap break-keep inline-flex items-center">
             <component :is="item" v-for="item in commonBtns" :key="item.key" />
             <el-dropdown v-if="isOvered">
-                <span class="pl-10px">更多</span>
+                <span class="text-0.95em pl-10px hover:cursor-pointer more-btn">更多</span>
                 <template #dropdown>
                     <el-dropdown-menu>
                         <el-dropdown-item
@@ -111,6 +111,11 @@ onMounted(() => {
         text-align: left;
         margin: 0;
         justify-content: flex-start;
+    }
+}
+.more-btn {
+    &:focus-visible {
+        outline: none;
     }
 }
 </style>
