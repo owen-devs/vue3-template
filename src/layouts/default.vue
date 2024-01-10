@@ -2,9 +2,10 @@
     <el-container class="w-100vw h-100vh">
         <el-aside
             :width="asideWidth"
-            class="h-100% pl-1em overflow-auto side-bar transition-all ease-in-out duration-300"
+            class="flex flex-col pl-1em overflow-auto side-bar transition-all ease-in-out duration-300"
         >
-            <side-bar />
+            <logo />
+            <side-bar class="flex-1" />
         </el-aside>
         <el-container>
             <el-header>
@@ -18,14 +19,21 @@
 </template>
 
 <script setup lang="ts">
+import logo from './components/logo'
 import navBar from './components/navBar'
 import sideBar from './components/sideBar'
 import appMain from './components/appMain'
 
-//TODO
 const collapseStore = useCollapseStore()
 
 const asideWidth = computed(() => (collapseStore.isCollapse ? '81px' : '300px'))
+
+useEventListener(
+    'resize',
+    useDebounceFn(() => {
+        collapseStore.setCollapse(window.innerWidth < 768)
+    }, 500)
+)
 </script>
 
 <style lang="scss" scoped>

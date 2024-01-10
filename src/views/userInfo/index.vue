@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <el-descriptions title="个人信息">
+        <el-descriptions title="用户信息">
             <el-descriptions-item label="用户名">{{ user.userName }}</el-descriptions-item>
             <el-descriptions-item label="账号">{{ user.userAccount }}</el-descriptions-item>
             <el-descriptions-item label="性别">{{ user.userGender }}</el-descriptions-item>
@@ -11,14 +11,12 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { getUserInfo } from '@/api/user'
-const user = ref({
-    userName: '某某'
-})
+const useInfoStore = useUserInfoStore()
+const user = ref({})
 
 const getDetail = () => {
-    getUserInfo({ userId: '007eed21-eb10-8888-6fea-d78666345bd8' }).then((res) => {
-        user.value = res
+    useInfoStore.getUserInfo().then((res) => {
+        user.value = res || {}
     })
 }
 

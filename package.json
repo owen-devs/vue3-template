@@ -13,6 +13,7 @@
         "format": "prettier --write src/"
     },
     "dependencies": {
+        "@iconify-json/ri": "^1.1.18",
         "@vueuse/core": "^10.6.1",
         "animate.css": "^4.1.1",
         "axios": "^1.6.2",

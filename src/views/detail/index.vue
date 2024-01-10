@@ -11,14 +11,12 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { getUserInfo } from '@/api/user'
-const user = ref({
-    userName: '某某'
-})
+const useInfoStore = useUserInfoStore()
+const user = ref({})
 
 const getDetail = () => {
-    getUserInfo({ userId: '007eed21-eb10-8888-6fea-d78666345bd8' }).then((res) => {
-        user.value = res
+    useInfoStore.getUserInfo().then((res) => {
+        user.value = res || {}
     })
 }
 

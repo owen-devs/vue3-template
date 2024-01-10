@@ -1,5 +1,12 @@
 import { request } from '@/utils/request'
 
+export function getCurrentUser(params) {
+    return request({
+        url: '/user/getCurrentUser',
+        method: 'get',
+        params
+    })
+}
 export function getUserInfo(params) {
     return request({
         url: '/user/getDetail',
