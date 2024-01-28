@@ -1,7 +1,7 @@
 <template>
-    <div>用户管理列表</div>
+    <div></div>
 </template>
 
-<script></script>
+<script lang="ts" setup></script>
 
-<style></style>
+<style lang="scss" scoped></style>

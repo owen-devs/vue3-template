@@ -20,6 +20,7 @@
         "element-plus": "^2.4.2",
         "pinia": "^2.1.7",
         "rollup-plugin-visualizer": "^5.9.3",
+        "terser": "^5.26.0",
         "unocss": "^0.57.7",
         "vite-plugin-pages": "^0.31.0",
         "vue": "^3.3.4",

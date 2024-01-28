@@ -1,11 +1,11 @@
 <template>
     <div class="p-1em flex items-center">
         <el-button @click="changeCollapse" class="mr-0.5em" link>
-            <el-icon class="!text-1.5em">
+            <el-icon class="!text-1.5em" :title="collapseStore.isCollapse ? '展开' : '收起'">
                 <i
                     :class="{
-                        'i-ri-indent-decrease': !isCollapse,
-                        'i-ri-indent-increase': isCollapse
+                        'i-ri-indent-decrease': !collapseStore.isCollapse,
+                        'i-ri-indent-increase': collapseStore.isCollapse
                     }"
                 />
             </el-icon>
@@ -15,12 +15,11 @@
 </template>
 
 <script lang="ts" setup>
-const collapse = useCollapseStore()
+const collapseStore = useCollapseStore()
 
-const isCollapse = ref(false)
 const changeCollapse = () => {
-    isCollapse.value = !isCollapse.value
-    collapse.setCollapse(isCollapse.value)
+    collapseStore.isCollapse = !collapseStore.isCollapse
+    collapseStore.setCollapse(collapseStore.isCollapse)
 }
 </script>
 

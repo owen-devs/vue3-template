@@ -46,8 +46,10 @@ export default defineConfig(({ command, mode }) => {
             minify: 'terser',
 
             terserOptions: {
-                drop_console: true,
-                drop_debugger: true
+                compress: {
+                    drop_console: true,
+                    drop_debugger: true
+                }
             },
             target: ['chrome63'],
             rollupOptions: {
