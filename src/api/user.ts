@@ -1,13 +1,13 @@
 import { request } from '@/utils/request'
 
-export function getCurrentUser(params) {
+export function getCurrentUser(params: Object) {
     return request({
         url: '/user/getCurrentUser',
         method: 'get',
         params
     })
 }
-export function getUserInfo(params) {
+export function getUserInfo(params: Object) {
     return request({
         url: '/user/getDetail',
         method: 'get',
@@ -15,7 +15,7 @@ export function getUserInfo(params) {
     })
 }
 
-export function getUserListByPage(params, data) {
+export function getUserListByPage(params: Object, data: Object) {
     return request({
         url: '/user/queryPage',
         method: 'post',
@@ -24,7 +24,7 @@ export function getUserListByPage(params, data) {
     })
 }
 
-export function createUser(data) {
+export function createUser(data: Object) {
     return request({
         url: '/user/createUser',
         method: 'post',
@@ -32,14 +32,14 @@ export function createUser(data) {
     })
 }
 
-export function updateUser(data) {
+export function updateUser(data: Object) {
     return request({
         url: '/user/updateUser',
         method: 'post',
         data
     })
 }
-export function deleteUser(params) {
+export function deleteUser(params: Object) {
     return request({
         url: '/user/deleteUser',
         method: 'get',
