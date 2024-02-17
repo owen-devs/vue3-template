@@ -1,21 +1,23 @@
+import type { AxiosRequestConfig } from 'axios'
 import axios from 'axios'
 import Cookies from 'js-cookie'
+import type { AxiosError, AxiosResponse } from 'node_modules/axios/index.cjs'
 
 function createService(options: any) {
     const service = axios.create(options)
 
     service.interceptors.request.use(
-        (config) => {
+        (config: AxiosRequestConfig) => {
             // config.headers['Authorization'] = 'Bearer ' + Cookies.get('access_token')
             return config
         },
-        (error) => {
+        (error: AxiosError) => {
             return Promise.reject(error)
         }
     )
 
     service.interceptors.response.use(
-        (response) => {
+        (response: AxiosResponse) => {
             if (response?.config?.download) {
                 return response
             }
@@ -26,15 +28,15 @@ function createService(options: any) {
             }
             return res.result
         },
-        (error) => {
-            console.log(error.response.data.code)
-            if (error.response.data.code === 401) {
+        (error: AxiosError) => {
+            console.log(error?.response?.data?.code)
+            if (error?.response?.data?.code === 401) {
                 const currentUrl = encodeURIComponent(window.location.href)
                 window.location.href =
-                    'http://localhost:9999/auth-api/login?redirectUrl=' + currentUrl
+                    'http://localhost:9998/auth-api/login?redirectUrl=' + currentUrl
                 return Promise.reject(error)
             }
-            ElMessage.error(error.response.data.msg || error.response.status)
+            ElMessage.error(error?.response?.data?.msg || error?.response?.status)
             return Promise.reject(error)
         }
     )
