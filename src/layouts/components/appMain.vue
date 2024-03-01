@@ -5,9 +5,9 @@
     >
         <router-view v-slot="{ Component, route }">
             <transition>
-                <div v-show="true">
+                <div v-show="true" class="p-1em">
                     <keep-alive>
-                        <component :key="route.fullPath" :is="Component" class="p-1em" />
+                        <component :key="route.fullPath" :is="Component" />
                     </keep-alive>
                 </div>
             </transition>

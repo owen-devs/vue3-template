@@ -32,6 +32,11 @@ const menus = ref([
         icon: 'i-ph-dots-three-circle-vertical-fill'
     },
     {
+        path: '/waterfallLayout',
+        title: '瀑布流布局',
+        icon: 'i-ph-dots-three-circle-vertical-fill'
+    },
+    {
         title: '无限菜单',
         path: '/loop',
         icon: 'i-ph-list-bullets-duotone',
