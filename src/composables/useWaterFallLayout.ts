@@ -68,7 +68,6 @@ export function useWaterFallLayout(containerRef: Ref<HTMLElement | null>, itemSe
     const containerWidth = ref<number>(0)
     const containerHeight = ref<number>(0)
     const columnWidth = ref<number>(0)
-    const containerLeft = ref<number>(0)
 
     const getItems = (selector?: string) =>
         document.querySelectorAll<HTMLElement>(selector || itemSelector)
@@ -79,12 +78,7 @@ export function useWaterFallLayout(containerRef: Ref<HTMLElement | null>, itemSe
 
     const useContainerWidth = () => {
         setContainerPosition()
-        const { paddingLeft, paddingRight } = window.getComputedStyle(containerRef.value!)
-        console.log(paddingLeft, paddingRight)
-
-        containerLeft.value = parseFloat(paddingLeft)
-        containerWidth.value =
-            containerRef.value!.clientWidth - parseFloat(paddingLeft) - parseFloat(paddingRight)
+        containerWidth.value = containerRef.value!.clientWidth
     }
 
     const useColumnWidth = () => {
@@ -94,9 +88,7 @@ export function useWaterFallLayout(containerRef: Ref<HTMLElement | null>, itemSe
 
     const getItemLeft = (index: number) => {
         const remain = index % column.value
-        return remain === 0
-            ? 0
-            : remain * (columnWidth.value + columnSpacing.value) + containerLeft.value
+        return remain === 0 ? 0 : remain * (columnWidth.value + columnSpacing.value)
     }
 
     //获取同列顶头的位置高度
