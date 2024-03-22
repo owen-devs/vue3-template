@@ -54,6 +54,7 @@
 
  </script>
  */
+import { ref } from 'vue'
 import type { Ref } from 'vue'
 
 export function useWaterFallLayout(containerRef: Ref<HTMLElement | null>, itemSelector: string) {

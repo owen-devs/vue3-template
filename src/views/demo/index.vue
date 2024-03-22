@@ -44,11 +44,22 @@
                 <el-button link @click.stop="showBtn('11212.txt')">编辑</el-button>
             </Operations>
         </div>
-        <div class="test-text h-1000px">测试文字变量</div>
+        <div class="test-text h-100px">测试文字变量</div>
+
+        <h2>测试vue3.4的 defineModel() 语法：</h2>
+        <h3>父组件：</h3>
+        <div>title：</div>
+        <el-input v-model="title"></el-input>
+        <div>modelValue：</div>
+        <el-input v-model="modelValue"></el-input>
+
+        <h3>子组件：</h3>
+        <TestDefineModel v-model:title="title" v-model="modelValue" />
     </main>
 </template>
 
 <script lang="ts" setup>
+import TestDefineModel from './components/TestDefineModel.vue'
 import { download } from '@/utils/download'
 const { pageSize, pageNo, total } = usePagination()
 
@@ -76,6 +87,9 @@ console.log(route)
 const { count, increment } = useCounterStore()
 increment()
 console.log(count)
+
+const title = ref('')
+const modelValue = ref('')
 </script>
 
 <style lang="scss" scoped>

@@ -77,7 +77,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import AddUser from './components/addUser'
+import AddUser from './components/addUser.vue'
 import { getUserListByPage, deleteUser } from '@/api/user'
 
 const { pageNo, pageSize, total, currentChange, sizeChange } = usePagination()
