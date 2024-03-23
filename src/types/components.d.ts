@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    BpmnProcess: typeof import('./../components/bpmnProcess/index.vue')['default']
     Breadcrumb: typeof import('./../components/Breadcrumb/index.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
@@ -39,6 +40,7 @@ declare module 'vue' {
     ElTable: typeof import('element-plus/es')['ElTable']
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     Operations: typeof import('./../components/Operations.vue')['default']
+    PropertiesPanel: typeof import('./../components/bpmnProcess/properties-panel/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SubMenuItem: typeof import('./../components/SubMenuItem.vue')['default']

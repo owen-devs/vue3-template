@@ -17,6 +17,11 @@ const collapseStore = useCollapseStore()
 
 const menus = ref([
     {
+        path: '/processDesigner',
+        title: '流程设计列表',
+        icon: 'i-ph-dots-three-circle-vertical-fill'
+    },
+    {
         path: '/userList',
         title: '用户管理',
         icon: 'i-ph-user-list-duotone'
