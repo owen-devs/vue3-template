@@ -55,6 +55,16 @@
 
         <h3>子组件：</h3>
         <TestDefineModel v-model:title="title" v-model="modelValue" />
+
+        <h2>测试时间节点生成：</h2>
+        <el-select v-model="timeNode">
+            <el-option
+                v-for="item in timeNodeOptions"
+                :label="item.label"
+                :value="item.value"
+                :key="item.value"
+            ></el-option>
+        </el-select>
     </main>
 </template>
 
@@ -90,6 +100,19 @@ console.log(count)
 
 const title = ref('')
 const modelValue = ref('')
+
+//时间节点生成器
+const { timeNodes } = useTimeNodes()
+console.log(timeNodes)
+const timeNode = ref('')
+const timeNodeOptions = ref(
+    timeNodes.map((v) => {
+        return {
+            label: v,
+            value: v
+        }
+    }) || []
+)
 </script>
 
 <style lang="scss" scoped>
