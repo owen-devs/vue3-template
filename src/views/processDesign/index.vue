@@ -3,7 +3,7 @@
         <div class="flex justify-between items-center">
             <h4>流程设计列表</h4>
             <div class="">
-                <el-button type="primary" @click="createUser">
+                <el-button type="primary" @click="create">
                     新建流程
                     <el-icon class="ml-0.5em"><i class="i-ph-plus-circle-light" /></el-icon>
                 </el-button>
@@ -14,11 +14,11 @@
             <div>
                 <el-input
                     v-model="searchs.userName"
-                    placeholder="请输入用户名"
-                    @change="getUserList(true)"
+                    placeholder="模糊搜索流程名称或创建人"
+                    @change="getProcesses(true)"
                 >
                     <template #append>
-                        <el-button @click="getUserList(true)">
+                        <el-button @click="getProcesses(true)">
                             <el-icon><i class="i-ph-magnifying-glass" /></el-icon>
                         </el-button>
                     </template>
@@ -36,7 +36,7 @@
             <el-table-column label="操作" width="180">
                 <template #default="{ row }">
                     <Operations :key="row.userId">
-                        <el-button type="primary" @click="editUser(row)" link>编辑</el-button>
+                        <el-button type="primary" @click="modify(row)" link>编辑</el-button>
                         <el-popconfirm
                             title="确定要删除用户?"
                             width="180"
@@ -67,9 +67,8 @@
             @size-change="sizeChange"
             @current-change="currentChange"
         />
-        <CreateModifyProcess
+        <CreateModify
             v-if="showCreateModify"
-            :type="type"
             :row="rows"
             @closed="showCreateModify = false"
             @refresh="getProcesses"
@@ -77,7 +76,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import CreateModifyProcess from './components/createModifyProcess.vue'
+import CreateModify from './components/createModify.vue'
 import { getProcessList } from '@/api/process'
 
 const { pageNo, pageSize, total, currentChange, sizeChange } = usePagination()
@@ -88,16 +87,14 @@ const searchs = ref({
 })
 const showCreateModify = ref(false)
 const rows = ref({})
-const type = ref('create')
 
-const createUser = () => {
-    type.value = 'create'
+const create = () => {
+    rows.value = {}
     showCreateModify.value = true
 }
 
-const editUser = (row: any) => {
+const modify = (row: any) => {
     console.log(row)
-    type.value = 'update'
     rows.value = row
     showCreateModify.value = true
 }
@@ -135,10 +132,10 @@ watch(
 )
 
 onMounted(() => {
-    getUserList()
+    getProcesses(true)
 })
 </script>
 <route lang="yaml">
 meta:
-    title: 用户管理列表
+    title: 流程设计列表
 </route>
