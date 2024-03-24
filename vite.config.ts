@@ -125,6 +125,14 @@ export default defineConfig(({ command, mode }) => {
                 '.mjs',
                 '.cjs'
             ]
+        },
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    // 引入自定义的样式文件
+                    additionalData: `@use "@/styles/main.scss" as *;`
+                }
+            }
         }
     }
 })
