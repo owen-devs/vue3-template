@@ -112,8 +112,8 @@
 -   **智能编码工具**：
     1. copilot
     2. codeium
-    3. TONGYI Lingma（阿里）
-    4. iFlyCode（科大讯飞）
+    3. TONGYI Lingma
+    4. iFlyCode
     5. CodeGeeX
 
 ## 项目安装
