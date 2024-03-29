@@ -10,6 +10,7 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import UnoCSS from 'unocss/vite'
+import legacy from '@vitejs/plugin-legacy'
 import './src/utils/origins.ts'
 
 // https://vitejs.dev/config/
@@ -51,7 +52,7 @@ export default defineConfig(({ command, mode }) => {
                     drop_debugger: true
                 }
             },
-            target: ['chrome63'],
+            // target: ['es2015', 'chrome63'],
             rollupOptions: {
                 output: {
                     compact: true,
@@ -107,6 +108,9 @@ export default defineConfig(({ command, mode }) => {
             }),
             UnoCSS({
                 configFile: './uno.config.ts'
+            }),
+            legacy({
+                targets: ['chrome 63', 'defaults', 'not IE 11']
             })
         ],
         resolve: {
