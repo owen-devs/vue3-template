@@ -20,13 +20,9 @@
 
 <script setup lang="ts">
 //@ts-ignore
-import logo from './components/logo'
-//@ts-ignore
 import navBar from './components/navBar'
 //@ts-ignore
 import sideBar from './components/sideBar'
-//@ts-ignore
-import appMain from './components/appMain'
 
 const collapseStore = useCollapseStore()
 
