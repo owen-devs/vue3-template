@@ -13,9 +13,10 @@
 </template>
 
 <script setup lang="ts">
+//@ts-ignore
 import navBar from './components/navBar'
+//@ts-ignore
 import sideBar from './components/sideBar'
-import appMain from './components/appMain'
 </script>
 
 <style lang="scss" scoped></style>
