@@ -12,7 +12,15 @@
         }
     ],
     "compilerOptions": {
-        "types": ["element-plus/global", "vite-plugin-vue-layouts/client", "vite-plugin-pages/client", "vite/client"]
+        "types": [
+            "element-plus/global",
+            "vite-plugin-vue-layouts/client",
+            "vite-plugin-pages/client",
+            "vite/client"
+        ],
+        "paths": {
+            "@/*": ["./src/*"]
+        }
     },
     "includes": ["src/**/*.d.ts", "./*.d.ts"]
 }
